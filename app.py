@@ -48,7 +48,7 @@ def manage_alumno(id):
     db.session.commit()
     return alumno_schema.jsonify(tarea)
   elif request.method == 'DELETE':
-    tarea = alumno.query.get(id)
+    tarea = Alumno.query.get(id)
     db.session.delete(tarea)
     db.session.commit()
     return alumno_schema.jsonify(tarea)
